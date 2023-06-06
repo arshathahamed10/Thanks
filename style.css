@@ -15,6 +15,11 @@ body
     align-items:center;
     justify-content:center;
 }
+.container {
+    max-width: 1024px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
 h1{
     color : #fff;
     font-size: 80px;
@@ -28,10 +33,135 @@ h1{
     -webkit-background-clip: text;
     animation:textclip 2s linear infinite;
 }
+.home__image img{
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation:floaty 1.8s infinite alternate;
+}
+.home__image
+{
+    margin-top: 50px;
+    justify-self: center;
+}
+.home__shadow
+{
+    width:160px;
+    height:24px;
+    background-color: hsla(38,61%,79%,.16);
+    margin:0 auto;
+    border-radius: 50%;
+    filter:blur(4px);
+    animation :shadow 1.8s infinite alternate;
+}
+
+/* KEYFRAMES */
+/* Animate ghost */
+@keyframes floaty
+{
+  0%
+  {
+    transform:translateY(0);
+  }
+  100%
+  {
+    transform:translateY(15px);
+  }
+}
+@keyframes shadow
+{
+  0%
+  {
+    /* transform:translateY(0); */
+    transform: scale(1,1);
+  }
+  100%
+  {
+    /* transform:translateY(15px); */
+    transform:scale(.85,.85);
+  }
+}
 @keyframes textclip
 {
     to
     {
         background-position: 200% center;
     }
+}
+/* For small devices */
+
+@media screen and (min-width:1048px)
+{
+  .container
+  {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width:900px)
+{
+  h1{
+    font-size: 60px;
+  }
+}
+@media screen and (max-width:687px)
+{
+  h1{
+    font-size: 40px;
+  }
+  .home__image img
+  {
+    width: 240px;
+  }
+  .home__shadow
+  {
+    width: 130px;
+  }
+}
+@media screen and (max-width:474px)
+{
+  h1{
+    font-size: 30px;
+  }
+  .home__image img
+  {
+    width: 200px;
+  }
+  .home__shadow
+  {
+    width: 110px;
+  }
+}
+@media screen and (max-width:368px)
+{
+  h1{
+    font-size: 20px;
+  }
+  .home__image img
+  {
+    width: 150px;
+  }
+  .home__shadow
+  {
+    width: 90px;
+  }
+}
+@media screen and (max-width:260px)
+{
+  h1{
+    font-size: 15px;
+  }
+  .home__image img
+  {
+    width: 120px;
+  }
+  .home__image
+  {
+    margin-top: 40px;
+  }
+  .home__shadow
+  {
+    width: 60px;
+  }
 }
